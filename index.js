@@ -1,5 +1,6 @@
 var express = require ('express');
 var app = express();
+var BodyParser = require('body-parser');
 var UserController = require('./Controllers/UserController');
 
 
