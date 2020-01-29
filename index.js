@@ -1,9 +1,11 @@
 var express = require ('express');
 var app = express();
+var UserController = require('./Controllers/UserController');
 
 
 
-var dbConfig= require('./DatabaseConfig');
+
+
 
 
 //app.use(BodyParser.urlencoded({extended: true}));
