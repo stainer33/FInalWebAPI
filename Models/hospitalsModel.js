@@ -3,7 +3,7 @@ var Sequelize = dbConfig.Sequelize;
 var sequelize = dbConfig.sequelize;
 
 //defining schema
-var hospotals = sequelize.define('hospital',
+var hospitals = sequelize.define('hospital',
 {
   id:{type: Sequelize.INTEGER,
   primaryKey: true,
@@ -34,9 +34,9 @@ lon:{
 },{timestamps:false, freezeTableName:true, tableName: 'hospitalsTable'});
 
 //creating table
-items.sync({force: false})
+hospitals.sync({force: false})
 .then(function (result)
-{console.log("Diseases Table created successfully");
+{console.log("hospitals Table created successfully");
 })
  .catch(function (err)
  {console.log(err);

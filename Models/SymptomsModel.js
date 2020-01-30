@@ -18,7 +18,7 @@ symptom:{
 },{timestamps:false, freezeTableName:true, tableName: 'symptomsTable'});
 
 //creating table
-items.sync({force: false})
+symptoms.sync({force: false})
 .then(function (result)
 {console.log("Symptoms Table created successfully");
 })

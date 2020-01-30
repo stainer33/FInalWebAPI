@@ -4,7 +4,7 @@ var users = require('../Models/UserModel');
 
 
 
-//checking username already exist or not
+//checking email/username already exist or not
 function CheckIfExist(req, res, next)
 {//select query
     users.findOne({
