@@ -3,7 +3,7 @@ var Sequelize = dbConfig.Sequelize;
 var sequelize = dbConfig.sequelize;
 
 //defining schema
-var items = sequelize.define('item',
+var symptoms = sequelize.define('symptom',
 {
   id:{type: Sequelize.INTEGER,
   primaryKey: true,
@@ -25,4 +25,4 @@ items.sync({force: false})
  .catch(function (err)
  {console.log(err);
 })
-module.exports=items;
+module.exports=symptoms;
