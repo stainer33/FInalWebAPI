@@ -1,7 +1,7 @@
 var dbConfig= require('../DatabaseConfig');
 var Sequelize = dbConfig.Sequelize;
 var sequelize = dbConfig.sequelize;
-
+var diseases =require('./DiseasesModel');
 //defining schema
 var symptoms = sequelize.define('symptom',
 {
@@ -25,4 +25,5 @@ symptoms.sync({force: false})
  .catch(function (err)
  {console.log(err);
 })
-module.exports=symptoms;
+
+module.exports={symptoms};

@@ -18,7 +18,7 @@ disease:{
 },{timestamps:false, freezeTableName:true, tableName: 'diseasesTable'});
 
 //creating table
-items.sync({force: false})
+diseases.sync({force: false})
 .then(function (result)
 {console.log("Diseases Table created successfully");
 })

@@ -4,7 +4,8 @@ var fs=require('fs');
 var BodyParser = require('body-parser');
 var UserController = require('./Controllers/UserController');
 var HospitalController=require('./Controllers/HospitalController');
-require('./Models/SymptomsModel');
+var SymptomsController=require('./Controllers/SymptomsController');
+var DiseasesController=require('./Controllers/DiseasesController');
 var uploadRouter=require('./Controllers/Upload');
 
 app.use(BodyParser.urlencoded({extended: true}));
@@ -19,7 +20,7 @@ app.get('/image/:image', (req, res) => {
 });
 app.get('/hospitals',HospitalController.GetAll);
 
-
+app.get('/symptoms',SymptomsController.GetAll);
 
 
 
