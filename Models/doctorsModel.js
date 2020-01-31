@@ -1,7 +1,7 @@
 var dbConfig= require('../DatabaseConfig');
 var Sequelize = dbConfig.Sequelize;
 var sequelize = dbConfig.sequelize;
-
+var hospital=require('./hospitalsModel');
 //defining schema
 var doctors = sequelize.define('doctor',
 {
@@ -14,19 +14,27 @@ name:{
   type: Sequelize.TEXT,
   allowNull: false
 },
-type:{
+qualification:{
+    type: Sequelize.TEXT,
+    allowNull: false
+  },
+  email:{
+    type: Sequelize.TEXT,
+    allowNull: false
+  },
+  profileImg:{
     type: Sequelize.TEXT,
     allowNull: false
   }
 
 },{timestamps:false, freezeTableName:true, tableName: 'doctorsTable'});
-
+doctors.belongsTo(hospital);
 //creating table
-items.sync({force: false})
+doctors.sync({force: false})
 .then(function (result)
 {console.log("Symptoms Table created successfully");
 })
  .catch(function (err)
  {console.log(err);
 })
-module.exports=symptoms;
+module.exports=doctors;

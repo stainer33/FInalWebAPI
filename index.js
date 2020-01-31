@@ -7,13 +7,14 @@ var HospitalController=require('./Controllers/HospitalController');
 var SymptomsController=require('./Controllers/SymptomsController');
 var DiseasesController=require('./Controllers/DiseasesController');
 var uploadRouter=require('./Controllers/Upload');
-
+require('./Models/doctorsModel');
+require('./Models/Appointment');
 app.use(BodyParser.urlencoded({extended: true}));
 
 app.post('/signup',  UserController.Hashing,UserController.CheckIfExist,UserController.Registration);
 app.post('/login',UserController.Hashing,UserController.Login);
 app.use('/upload', uploadRouter);
-app.get('/profile/:email',UserController.GetAll);
+app.get('/profile/:email',UserController.GetProfile);
 app.get('/image/:image', (req, res) => {
     pic=req.params.image
     res.sendFile('./public/uploads/'+pic, { root: __dirname });

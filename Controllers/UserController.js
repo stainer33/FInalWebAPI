@@ -48,7 +48,7 @@ function Registration(req, res, next)
     users.create({
         email: req.body.email,
         fullName: req.body.fullName,
-        password: req.body.password,
+        password: req.hashed,
         mobileNo: req.body.mobileNo,
         address: req.body.address,
         profileImg: req.body.profileImg
@@ -65,7 +65,7 @@ function Registration(req, res, next)
 }
 
 //profile
-function GetAll(req,res,next)
+function GetProfile(req,res,next)
 {
     users.findOne({
         where:{email: req.params.email} }).then(function (result)
@@ -95,7 +95,7 @@ function Login(req, res, next)
     
         
             users.findOne({
-                where:{email: req.body.email,Password:req.body.password} })
+                where:{email: req.body.email,Password:req.hashed} })
             .then(function(result)
             {
                 if(result===null)
@@ -151,4 +151,4 @@ function Delete(req, res, next)
 
 
 //exporting functions
-module.exports={ CheckIfExist, Hashing, Registration,Login,Delete, GetAll};
+module.exports={ CheckIfExist, Hashing, Registration,Login,Delete, GetProfile};
