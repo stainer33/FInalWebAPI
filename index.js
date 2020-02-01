@@ -8,6 +8,7 @@ var SymptomsController=require('./Controllers/SymptomsController');
 var DiseasesController=require('./Controllers/DiseasesController');
 var uploadRouter=require('./Controllers/Upload');
 var AppointmentController=require('./Controllers/AppointmentController');
+require('./Models/DiagnosisModel');
 app.use(BodyParser.urlencoded({extended: true}));
 
 app.post('/signup',  UserController.Hashing,UserController.CheckIfExist,UserController.Registration);

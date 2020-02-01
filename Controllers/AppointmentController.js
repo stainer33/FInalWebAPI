@@ -2,7 +2,7 @@ var appointment = require('../Models/Appointment');
 var doctor=require('../Models/doctorsModel');
 var user=require('../Models/UserModel');
 
-//get all hospital list
+//get all appointment list of a user
 function GetAll(req,res,next)
 {
     appointment.findAll({where:{'$user.id$':1},

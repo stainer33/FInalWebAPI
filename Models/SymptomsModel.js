@@ -28,4 +28,4 @@ symptoms.sync({force: false})
  {console.log(err);
 })
 //symptoms.belongsToMany( diseases,{ });
-module.exports={symptoms};
+module.exports=symptoms;

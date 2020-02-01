@@ -7,7 +7,7 @@ var diseases = sequelize.define('disease',
 {
   id:{type: Sequelize.INTEGER,
   primaryKey: true,
-autoIncrement: true,
+autoIncrement: true
 
 },
 disease:{
