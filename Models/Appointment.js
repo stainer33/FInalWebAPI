@@ -13,7 +13,14 @@ date:{
 }
 
 },{timestamps:false, freezeTableName:true, tableName: 'appointmentTable'});
-doctors.belongsToMany(users,{through: appointment});
+//doctors.belongsToMany(users,{through: appointment, foreignKey: 'doctorId'});
+//users.belongsToMany(doctors,{through: appointment, foreignKey: 'userId'});
+//for doctor
+doctors.hasMany(appointment);
+appointment.belongsTo(doctors);
+//for user
+users.hasMany(appointment);
+appointment.belongsTo(users);
 //creating table
 appointment.sync({force: false})
 .then(function (result)

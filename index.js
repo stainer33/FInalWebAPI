@@ -7,8 +7,7 @@ var HospitalController=require('./Controllers/HospitalController');
 var SymptomsController=require('./Controllers/SymptomsController');
 var DiseasesController=require('./Controllers/DiseasesController');
 var uploadRouter=require('./Controllers/Upload');
-require('./Models/doctorsModel');
-require('./Models/Appointment');
+var AppointmentController=require('./Controllers/AppointmentController');
 app.use(BodyParser.urlencoded({extended: true}));
 
 app.post('/signup',  UserController.Hashing,UserController.CheckIfExist,UserController.Registration);
@@ -23,7 +22,7 @@ app.get('/hospitals',HospitalController.GetAll);
 
 app.get('/symptoms',SymptomsController.GetAll);
 
-
+app.get('/appointment',AppointmentController.GetAll);
 
 //app.use(BodyParser.urlencoded({extended: true}));
 app.listen(3003);
