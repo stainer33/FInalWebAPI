@@ -29,6 +29,10 @@ lat:{
 lon:{
   type: Sequelize.DOUBLE,
   allowNull: false
+},
+website:{
+  type: Sequelize.TEXT,
+  allowNull: false
 }
 
 },{timestamps:false, freezeTableName:true, tableName: 'hospitalsTable'});

@@ -13,8 +13,12 @@ autoIncrement: true
 disease:{
   type: Sequelize.TEXT,
   allowNull: false
-}
+},
 
+website:{
+  type: Sequelize.TEXT,
+  allowNull: false
+}
 },{timestamps:false, freezeTableName:true, tableName: 'diseasesTable'});
 
 //creating table
