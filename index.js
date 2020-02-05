@@ -23,11 +23,12 @@ app.get('/image/:image', (req, res) => {
 });
 app.get('/hospitals',HospitalController.GetAll);
 
-app.get('/symptoms',SymptomsController.GetSymptom);
+app.get('/symptoms',SymptomsController.GetAll);
 
 app.get('/appointment',AppointmentController.GetAll);
 
 app.get('/diseases',DiseasesController.GetAll);
-app.get('/d',DiseasesController.diagnosis);
+app.get('/d/:id',DiseasesController.diagnosis);
+app.post('/appoint',AppointmentController.CheckIfExist,AppointmentController.Appoint);
 //app.use(BodyParser.urlencoded({extended: true}));
 app.listen(3003);

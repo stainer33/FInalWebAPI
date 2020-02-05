@@ -8,10 +8,9 @@ var appointment = sequelize.define('appointment',
 {
   
 date:{
-  type: Sequelize.DATE,
+  type: Sequelize.DATEONLY,
   allowNull: false
 }
-
 },{timestamps:false, freezeTableName:true, tableName: 'appointmentTable'});
 
 //for doctor

@@ -17,8 +17,8 @@ function GetAll(req,res,next)
 }
 
 function diagnosis(req, res, next)
-{var id=[2,4];
-    sequelize.query("select distinct d.disease from diagnosisTable dt join diseasesTable d on dt.diseaseId=d.id join symptomsTable s on dt.symptomId=s.id where s.id in (:id);", { replacements: { id: id },type: sequelize.QueryTypes.SELECT}).then(function(result)
+{var id=req.params.id;
+    sequelize.query("select distinct d.id,d.disease,d.website from diagnosisTable dt join diseasesTable d on dt.diseaseId=d.id join symptomsTable s on dt.symptomId=s.id where s.id in (:id);", { replacements: { id: id },type: sequelize.QueryTypes.SELECT}).then(function(result)
     {
         res.json(result);
     })
