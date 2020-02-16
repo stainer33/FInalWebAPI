@@ -24,7 +24,9 @@ jwbtoken installed in your environement.
 
 ## To Run the project
 Clone the project , give path to index.js and enter the command below:
+
     $ npm install
+    
     $ nodemon index.js
     
     Note: please check route carefully
